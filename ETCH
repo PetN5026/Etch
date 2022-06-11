@@ -1,1 +1,47 @@
-ETCH
+<HTML>
+<div id = "page">
+    <div>TITLE</div>
+    <div id = "container"></div>
+    <div> EXTRA</div>
+
+    </div>
+</HTML>
+
+<style>
+
+#page{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#container{
+
+    border: 1px;
+    border-style: solid;
+    grid-template-columns: repeat(32,1fr);
+    grid-template-rows: repeat(32,1fr);
+    display: grid;
+    height: 400px;
+    width: 400px;
+    padding: 0px;
+}
+
+</style>
+
+<script>
+const contain = document.querySelector("#container");
+
+
+    for (i = 0; i <32*32; i++){
+    let box = document.createElement("div");
+    box.classList.toggle("box");
+    contain.appendChild(box);
+}
+let test = document.querySelectorAll(".box");
+for (i = 0; i < test.length; i++){
+    let item = test[i]
+    item.addEventListener('mouseover', () => {item.style.background = 'black'});
+}
+</script>
